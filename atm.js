@@ -6,10 +6,12 @@ function getBalance() {
   return balance;
 }
 
+// prompt user if they want to withdraw
 function withdraw() {
   console.log(`Your withdrew is`);
 }
 
+// prompt user if they want to deposit
 function deposit() {
   console.log(`Your Deposit is`);
 }

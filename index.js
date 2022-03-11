@@ -11,11 +11,34 @@ function checkingForWrongPin(message) {
 
 checkingForWrongPin("Enter pin: ");
 
-function checkingForBalance(message) {
-  let userPromptBalance = prompt(message);
+function app(message) {
+  let searchType = prompt(
+    "Choose which option you'd like: Balance, Deposit, Withdraw, Exit: "
+  ).toLowerCase();
+  let searchResults;
+  switch (searchType) {
+    case "balance":
+      searchResults = checkingForBalance();
+      break;
+    case "deposit":
+      searchResults = depositMoney();
+      break;
+    case "withdraw":
+      searchResults = withdrawMoney();
+      break;
+    case "exit":
+      searchResults = exit();
+      break;
+    default:
+      app(message); // restart app
+      break;
+  }
+}
+app();
+
+function checkingForBalance() {
+  let userPromptBalance = prompt("Do you want to know your Balance? Yes/No: ");
   if (userPromptBalance === userPromptBalance.toLowerCase("yes")) {
     getBalance();
   }
 }
-
-checkingForBalance("Do you want to know your Balance? Yes/No: ");

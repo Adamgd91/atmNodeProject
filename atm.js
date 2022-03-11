@@ -13,8 +13,11 @@ function deposit() {
   console.log(`Your Deposit is`);
 }
 
-function validatePin() {
-  console.log(`Your Pin is`);
+function validatePin(userPromptPin) {
+  if (pin !== userPromptPin) {
+    return false;
+  }
+  return true;
 }
 
 module.exports = {

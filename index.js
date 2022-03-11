@@ -10,3 +10,12 @@ function checkingForWrongPin(message) {
 }
 
 checkingForWrongPin("Enter pin: ");
+
+function checkingForBalance(message) {
+  let userPromptBalance = prompt(message);
+  if (userPromptBalance === userPromptBalance.toLowerCase("yes")) {
+    getBalance();
+  }
+}
+
+checkingForBalance("Do you want to know your Balance? Yes/No: ");

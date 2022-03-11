@@ -1,5 +1,6 @@
 const { balance, pin } = require("./account.js");
 
+// Account for ++++ deposit() and ---- withdraw()
 function getBalance() {
   console.log(`Your Balance is ${balance}`);
   return balance;

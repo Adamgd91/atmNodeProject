@@ -1,5 +1,8 @@
+const { balance, pin } = require("./account.js");
+
 function getBalance() {
-  console.log(`Your Balance is`);
+  console.log(`Your Balance is ${balance}`);
+  return balance;
 }
 
 function withdraw() {
@@ -13,3 +16,10 @@ function deposit() {
 function validatePin() {
   console.log(`Your Pin is`);
 }
+
+module.exports = {
+  getBalance,
+  withdraw,
+  deposit,
+  validatePin,
+};

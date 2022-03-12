@@ -7,8 +7,9 @@ function getBalance() {
 }
 
 // prompt user if they want to withdraw
-function withdraw() {
-  console.log(`Your withdrew is ${}`);
+function withdraw(amount) {
+  console.log(`Your withdrew is ${amount}`);
+  balance -= amount;
   return balance;
 }
 

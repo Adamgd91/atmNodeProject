@@ -49,3 +49,11 @@ function depositMoney() {
 
   deposit(userPromptDeposit);
 }
+
+function withdrawMoney() {
+  let userPromptDeposit = parseInt(
+    prompt("How much do you want to withdraw? ")
+  );
+
+  deposit(userPromptDeposit);
+}

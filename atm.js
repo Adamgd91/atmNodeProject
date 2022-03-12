@@ -1,23 +1,22 @@
 let { balance, pin } = require("./account.js");
-
+let { subtractCash, addCash } = require("./wallet");
 // Account for ++++ deposit() and ---- withdraw()
 function getBalance() {
   console.log(`Your Balance is ${balance}`);
-  return balance;
 }
 
 // prompt user if they want to withdraw
 function withdraw(amount) {
   console.log(`Your withdrew is ${amount}`);
   balance -= amount;
-  return balance;
+  addCash(amount);
 }
 
 // prompt user if they want to deposit
 function deposit(amount) {
   console.log(`Your Deposit is ${amount}`);
   balance += amount;
-  return balance;
+  subtractCash(amount);
 }
 
 function validatePin(userPromptPin) {

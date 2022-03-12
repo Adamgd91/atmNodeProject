@@ -1,4 +1,6 @@
+let { getCashAmount } = require("./wallet");
 const { getBalance, withdraw, deposit, validatePin } = require("./atm");
+
 const prompt = require("prompt-sync")();
 
 function checkingForWrongPin(message) {
@@ -13,18 +15,21 @@ checkingForWrongPin("Enter pin: ");
 
 function app(message) {
   let searchType = prompt(
-    "Choose which option you'd like: Balance, Deposit, Withdraw, Exit: "
+    "Choose which option you'd like: Balance, Deposit, Withdraw, Wallet Exit: "
   ).toLowerCase();
-  let searchResults;
+
   switch (searchType) {
     case "balance":
-      searchResults = checkingForBalance();
+      checkingForBalance();
       break;
     case "deposit":
-      searchResults = depositMoney();
+      depositMoney();
       break;
     case "withdraw":
-      searchResults = withdrawMoney();
+      withdrawMoney();
+      break;
+    case "wallet":
+      console.log(getCashAmount());
       break;
     case "exit":
       process.exit(0);
@@ -55,5 +60,5 @@ function withdrawMoney() {
     prompt("How much do you want to withdraw? ")
   );
 
-  deposit(userPromptDeposit);
+  withdraw(userPromptDeposit);
 }

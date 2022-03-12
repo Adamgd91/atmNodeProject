@@ -1,4 +1,4 @@
-const { balance, pin } = require("./account.js");
+let { balance, pin } = require("./account.js");
 
 // Account for ++++ deposit() and ---- withdraw()
 function getBalance() {
@@ -8,12 +8,15 @@ function getBalance() {
 
 // prompt user if they want to withdraw
 function withdraw() {
-  console.log(`Your withdrew is`);
+  console.log(`Your withdrew is ${}`);
+  return balance;
 }
 
 // prompt user if they want to deposit
-function deposit() {
-  console.log(`Your Deposit is`);
+function deposit(amount) {
+  console.log(`Your Deposit is ${amount}`);
+  balance += amount;
+  return balance;
 }
 
 function validatePin(userPromptPin) {

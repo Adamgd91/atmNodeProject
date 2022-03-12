@@ -27,12 +27,13 @@ function app(message) {
       searchResults = withdrawMoney();
       break;
     case "exit":
-      searchResults = exit();
+      process.exit(0);
       break;
     default:
       app(message); // restart app
       break;
   }
+  app(message);
 }
 app();
 
@@ -41,4 +42,10 @@ function checkingForBalance() {
   if (userPromptBalance === userPromptBalance.toLowerCase("yes")) {
     getBalance();
   }
+}
+
+function depositMoney() {
+  let userPromptDeposit = parseInt(prompt("How much do you want to deposit? "));
+
+  deposit(userPromptDeposit);
 }
